@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatIconModule,
     MatGridListModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

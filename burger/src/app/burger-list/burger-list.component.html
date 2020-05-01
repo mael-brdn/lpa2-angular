@@ -7,10 +7,12 @@
       </mat-card-header>
       <img mat-card-image src="{{burger.image}}">
       <mat-card-content>
-        <p>{{burger.price}} €</p>
       </mat-card-content>
       <mat-card-actions>
-        <a mat-stroked-button routerLink="burger/{{burger.id}}">View</a>
+        <a mat-stroked-button routerLink="burger/{{burger.id}}" style="float: left">View</a>
+        <mat-chip-list style="float: right">
+          <mat-chip style="background-color: #27742d; color: #ffd700">{{burger.price}} €</mat-chip>
+        </mat-chip-list>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>

@@ -1,18 +1,23 @@
-<mat-card class="card-detail-burger">
-  <mat-card-header>
-    <div mat-card-avatar></div>
-    <mat-card-title>{{burger.name}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image src="{{burger.image}}">
-  <mat-card-content>
-    <p>Nutriscore : {{burger.nutriscore}}</p>
-    <mat-list role="list" >
-      <mat-list-item role="listitem">Satured Fat : {{burger.nutriments['saturated-fat']}}</mat-list-item>
-      <mat-list-item role="listitem">Energy Kcal : {{burger.nutriments['energy-kcal']}}</mat-list-item>
-    </mat-list>
-    <p>{{burger.price}} €</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <a mat-stroked-button (click)="goBack()">Return</a>
-  </mat-card-actions>
-</mat-card>
+<mat-grid-list cols="1" rowHeight="600px">
+  <mat-grid-tile>
+    <mat-card class="card-detail-burger">
+      <mat-card-header>
+        <mat-card-title>{{burger.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{burger.image}}">
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem">Satured Fat : {{burger.nutriments['saturated-fat']}}</mat-list-item>
+          <mat-list-item role="listitem">Energy Kcal : {{burger.nutriments['energy-kcal']}}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-stroked-button (click)="goBack()">Return</a>
+        <mat-chip-list style="float: right">
+          <mat-chip style="background-color: #27742d; color: #ffd700">Nutriscore : {{burger.nutriscore}}</mat-chip>
+          <mat-chip style="background-color: #27742d; color: #ffd700">{{burger.price}} €</mat-chip>
+        </mat-chip-list>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
