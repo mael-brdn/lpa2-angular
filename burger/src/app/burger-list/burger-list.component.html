@@ -1,5 +1,5 @@
-<mat-grid-list cols="6" rowHeight="200px">
-  <mat-grid-tile [colspan]="2" [rowspan]="3" *ngFor="let burger of burgerList">
+<mat-grid-list [cols]="breakpoint" rowHeight="250px" (window:resize)="onResize($event)">
+  <mat-grid-tile [colspan]="colspan" rowspan="3" *ngFor="let burger of burgerList">
     <mat-card class="card-list-burger">
       <mat-card-header>
         <div mat-card-avatar></div>
