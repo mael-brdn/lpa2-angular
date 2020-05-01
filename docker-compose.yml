@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: burger
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./burger:/burger:rw
+    ports:
+      - 4201:4200
