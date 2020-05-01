@@ -1,0 +1,109 @@
+openapi: 3.0.0
+info:
+  title: Burger store
+  description: la boutique des burgers
+  version: 1.0-oas3
+servers:
+- url: https://virtserver.swaggerhub.com/LPA2-Automne2016/burger/1.0-oas3
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: burgers
+  description: Everything about burgers
+paths:
+  /burgers.json:
+    get:
+      tags:
+      - burgers
+      summary: get the burger list
+      operationId: listBurgers
+      responses:
+        "200":
+          description: burger list
+          content:
+            application/json:
+              schema:
+                type: array
+                example:
+                - id: 0
+                  name: veggie
+                  price: 10.5
+                  image: https://www.sciencesetavenir.fr/assets/img/2019/11/12/cover-r4x3w1000-5dca94b06b23d-dc0704cb156eac5bf332fba736612897d8cc4d60-jpg.jpg
+                - id: 1
+                  name: le tres gras
+                  price: 9.5
+                  image: https://www.sciencesetavenir.fr/assets/img/2019/11/12/cover-r4x3w1000-5dca94b06b23d-dc0704cb156eac5bf332fba736612897d8cc4d60-jpg.jpg
+                - id: 2
+                  name: le tres cher
+                  price: 22.5
+                  image: https://www.sciencesetavenir.fr/assets/img/2019/11/12/cover-r4x3w1000-5dca94b06b23d-dc0704cb156eac5bf332fba736612897d8cc4d60-jpg.jpg
+                items:
+                  $ref: '#/components/schemas/Burger'
+  /burgers/{id}.json:
+    get:
+      tags:
+      - burgers
+      summary: get the burger list
+      operationId: burgerDetail
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: integer
+      responses:
+        "200":
+          description: burger detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BurgerDetail'
+components:
+  schemas:
+    Burger:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: veggie
+        price:
+          type: number
+          example: 10.5
+        image:
+          type: string
+          example: https://www.sciencesetavenir.fr/assets/img/2019/11/12/cover-r4x3w1000-5dca94b06b23d-dc0704cb156eac5bf332fba736612897d8cc4d60-jpg.jpg
+    BurgerDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: veggie
+        price:
+          type: number
+          example: 10.5
+        image:
+          type: string
+          example: https://www.sciencesetavenir.fr/assets/img/2019/11/12/cover-r4x3w1000-5dca94b06b23d-dc0704cb156eac5bf332fba736612897d8cc4d60-jpg.jpg
+        nutriscore:
+          type: string
+          example: A
+        nutriments:
+          $ref: '#/components/schemas/Nutriment'
+    Nutriment:
+      type: object
+      properties:
+        energy-kcal:
+          type: number
+          format: integer
+          example: 1100
+        saturated-fat:
+          type: number
+          example: 0.4
