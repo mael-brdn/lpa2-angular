@@ -14,6 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
 import {MatChipsModule} from "@angular/material/chips";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatChipsModule} from "@angular/material/chips";
     MatGridListModule,
     MatListModule,
     AppRoutingModule,
-    MatChipsModule
+    MatChipsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

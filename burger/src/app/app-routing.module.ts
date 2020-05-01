@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BurgerListComponent } from './burger-list/burger-list.component';
 import { BurgerDetailComponent } from './burger-detail/burger-detail.component';
+import {AppComponent} from "./app.component";
 
 
 const routes: Routes = [
